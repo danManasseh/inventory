@@ -36,3 +36,44 @@ input[type = text], input[type = password], input[type = number]{
     color: #fff;
     border-radius: 10px;
 }
+
+@media only screen and (max-width:600px){
+
+    .text-container{
+        left: 0px;
+        right: 0px;
+        padding: 40px 40px;
+    }
+    .img-class{
+        margin-bottom: -45px;
+    }
+    input[type = text], input[type = password], input[type = number]{
+        padding:15px 0px;
+        border-radius: 10px;
+        background-color: rgba(244, 240, 240, 1);
+        border-style: none;
+        width: 90%;
+        margin: 5px 0px 55px;
+    }
+    #button{
+        margin-left: 26%;
+        padding: 12px 65px;
+        border-style: none;
+        background-color: rgba(50, 66, 65, 1);
+        color: #fff;
+        border-radius: 10px;
+    }
+    /* 
+   
+    .text-container h2{
+        font-weight: bolder;
+        font-family: 'Nunito Sans', sans-serif;
+        margin-bottom: 30px;
+    }
+    
+    .text-container label{
+        font-weight: normal;
+    }
+    
+     */
+}
