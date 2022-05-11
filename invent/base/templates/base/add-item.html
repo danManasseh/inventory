@@ -8,34 +8,40 @@
 </head>
     <div class="container">
         {% include 'menu.html' %}
-        <div class="form-container">
-            <div class="inner-cont">
-                <div>
-                    <label for="">Name of Item</label>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-container">
+                <div class="inner-cont">
+                    <div>
+                        <label for="">Name of Item</label>
+                    </div>
+                    <div>
+                        <!-- <input name="item_name" type="text"> -->
+                        {{form.name}}
+                    </div>
                 </div>
-                <div>
-                    <input type="text">
+                <div class="inner-cont">
+                    <div>
+                        <label for="">Picture of Item</label>
+                    </div>
+                    <div> 
+                        <!-- <input id="pict" type="file" name="item_pic" accept="image/*"> -->
+                        {{form.item_img}}
+                    </div>
+                </div>
+                <div class="inner-cont">
+                    <div>
+                        <label for="">Number of Pieces</label>
+                    </div>
+                    <div>
+                        <!-- <input name="item_quantity" type="number"> -->
+                        {{form.quantity}}
+                    </div>
                 </div>
             </div>
-            <div class="inner-cont">
-                <div>
-                    <label for="">Picture of Item</label>
-                </div>
-                <div>
-                    <input id="pict" type="text">
-                </div>
+            <div>
+                <input id="buttons" type="submit" value="Add Item">
             </div>
-            <div class="inner-cont">
-                <div>
-                    <label for="">Number of Pieces</label>
-                </div>
-                <div>
-                    <input type="number">
-                </div>
-            </div>
-        </div>
-        <div>
-            <input id="buttons" type="submit" value="Add Item">
-        </div>
+        </form>
     </div>
 {% endblock content %}

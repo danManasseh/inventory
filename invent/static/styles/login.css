@@ -16,13 +16,18 @@
     font-family: 'Nunito Sans', sans-serif;
     margin-bottom: 30px;
 }
-input[type = text], input[type = password], input[type = number]{
+input[type = text], input[type = password], input[type = number], input[type = file]{
     padding:12px 0px 8px 15px;
     border-radius: 10px;
     background-color: rgba(244, 240, 240, 1);
     border-style: none;
     width: 90%;
     margin: 5px 0px 18px;
+}
+input[type = file]{
+    min-height: 40px;
+    width: 95%;
+    padding-top: 15px;
 }
 .text-container label{
     font-weight: normal;

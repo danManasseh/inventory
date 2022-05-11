@@ -20,7 +20,7 @@ class Home(models.Model):
 
 
 class Item(models.Model):
-    name = models.CharField(max_length = 200)
+    name = models.CharField(max_length = 50)
     home_name = models.ForeignKey(Home, on_delete=models.CASCADE, null=True)
     quantity = models.IntegerField(default = 0)
     item_img = models.ImageField(null = True)

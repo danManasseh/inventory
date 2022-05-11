@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from .models import Home, City, Item
+from .forms import itemForm
 # Create your views here.
 
 
@@ -40,5 +41,22 @@ def homeitemPage(request, pk):
 
 
 ##items page
-def additemPage(request):
-    return render(request, 'base/add-item.html')
+def additemPage(request, pk):
+    home = Home.objects.get(id = pk)
+    form = itemForm()
+    if request.method == 'POST':
+        form = itemForm(request.POST, request.FILES)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.name = item.name.lower()
+            item.home_name = home
+            item.save()
+            return redirect('home-item', pk = home.id)
+        # Item.objects.create(
+        #     name = request.POST.get('item_name'),
+        #     item_img = request.FILES('item_pic'),
+        #     quantity = request.POST.get('item_quantity'),
+        #     home_name = home,
+        # )
+    context = {'form':form}
+    return render(request, 'base/add-item.html', context)

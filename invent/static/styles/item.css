@@ -2,7 +2,9 @@
     margin: 10px 0px 15px 10px;
 }
 #pict{
-    min-height: 100px;
+    min-height: 40px;
+    width: 95%;
+    padding-top: 15px;
 }
 .form-container{
     margin-top: 50px;
@@ -21,7 +23,7 @@
         margin: 100px 40px 20px;
     }
     #buttons{
-        margin-left: 28%;
+        margin-left: 23%;
         padding: 12px 65px;
         border-style: none;
         background-color: rgba(50, 66, 65, 1);
