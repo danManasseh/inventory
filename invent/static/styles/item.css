@@ -17,6 +17,30 @@
     color: #fff;
     border-radius: 10px;
 }
+/*#myFile{
+    margin-left: 3%;
+    /*padding:12px 45px;
+    padding: 10px;
+    background-color: rgba(244, 240, 240, 1);
+    border-radius: 10px;
+
+}*/
+.form-button{
+    padding:15px 0px;
+    border-radius: 10px;
+    background-color: rgba(244, 240, 240, 1);
+    border-style: none;
+    width: 90%;
+    margin: 5px 0px 55px;
+    margin-left: 3px;
+    padding-left: 10px;
+   
+    
+}
+.inner-cont1{
+    margin: 0px 0px 0px 0px;;
+}
+
 
 @media only screen and (max-width: 600px){
     .form-container{
