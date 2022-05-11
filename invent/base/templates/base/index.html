@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<section class="container">
+  {% include 'menu.html' %}
+    <p id="head-text">Select your <br> preferred home to <br> add items</p>
+    <div class="img-container">
+        {% for list in homelist %}
+        <div class="img-class">
+            <a href="{% url 'home-item' list.id %}"><img class="img-item" src="{{list.house_pic.url}}" alt="alt" height="80px" width="100%"></a>
+            <div class="img-text">{{list.city}}</div>
+        </div>
+        {% empty %}
+        <h3>No Items in List</h3>
+        {%endfor%}
+    </div>
+    
+    <div style="margin-left: 16px;">
+        <input id="search-bar" type="text" placeholder="Search Inventory...">
+    </div>
+</section>
+
+{% endblock content %}

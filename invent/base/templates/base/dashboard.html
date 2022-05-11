@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+</head>
+<section class="container">
+        {% include 'menu.html' %}
+    <div class="dash-head">
+        <img id="dash-image" src="{{home.house_pic.url}}" alt="" width="100%" height="150px">
+        <div class="float-text">
+            <h5>{{home.name}} - {{home.city}}</h5>
+        </div>
+    </div>
+    <div class="item-container">
+        <div class="clearfix">
+            {% for item in items %}
+            <a style="display:block;" href="#" class="img-cont">
+                <img class="dash-img" src="{{item.item_img.url}}" alt="alt" height="100px" width="100%">
+                <p>{{item.name}}</p>
+                <p>{{item.quantity}} pieces</p>
+            </a>
+            {% endfor %}
+            <a style="display: block;" href="{% url 'add-item' %}" class="img-cont">
+                <div class="add-item"><p>&#x2b;</p></div>
+                <p>Add an item</p>
+            </a>
+        </div> 
+    </div>
+</section>
+{% endblock content %}
