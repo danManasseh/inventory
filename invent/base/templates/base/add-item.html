@@ -2,9 +2,22 @@
 
 {% block content %}
 <head>
+<<<<<<< Updated upstream:invent/base/templates/base/add-item.html
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles/item.css' %}">
     <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+=======
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/styles/styles.css">
+    <link rel="stylesheet" href="/theme/styles/item.css">
+    <link rel="stylesheet" href="/theme/styles/login.css">
+    <title>New Items</title>
+>>>>>>> Stashed changes:theme/templates/items.html
 </head>
     <div class="container">
         {% include 'menu.html' %}
@@ -18,13 +31,15 @@
                 </div>
             </div>
             <div class="inner-cont">
-                <div>
-                    <label for="">Picture of Item</label>
-                </div>
-                <div>
-                    <input id="pict" type="text">
-                </div>
+                <label for="">Choose a picture</label>
+                <form action="/action_page.php" class="form-button" >
+                    <input type="file" id="myFile" name="filename">
+                   
+                  </form>
             </div>
+            
+                
+            
             <div class="inner-cont">
                 <div>
                     <label for="">Number of Pieces</label>

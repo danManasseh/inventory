@@ -36,7 +36,9 @@ input[type = text], input[type = password], input[type = number]{
     color: #fff;
     border-radius: 10px;
 }
-
+#button:hover{
+    background-color: rgb(115, 145, 143);
+}
 @media only screen and (max-width:600px){
 
     .text-container{
@@ -55,9 +57,14 @@ input[type = text], input[type = password], input[type = number]{
         border-style: none;
         width: 90%;
         margin: 5px 0px 55px;
+        padding-left: 20px;
     }
     #button{
+<<<<<<< Updated upstream:invent/static/styles/login.css
         margin-left: 19%;
+=======
+        margin-left: 20%;
+>>>>>>> Stashed changes:theme/styles/login.css
         padding: 12px 65px;
         border-style: none;
         background-color: rgba(50, 66, 65, 1);
