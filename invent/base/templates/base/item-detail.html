@@ -1,40 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/theme/styles/styles.css">
-    <link rel="stylesheet" href="/theme/styles/item.css">
-    <link rel="stylesheet" href="/theme/styles/login.css">
-    <link rel="stylesheet" href="/theme/styles/item-detail.css">
-    <title>Item details</title>
-</head>
-<body>
+  {% extends 'main.html' %}
+  {% block content %}
+   <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/item-detail.css' %}">
+   </head>
 <div class="container">
-    <div class="top-header">pyrex bowls</div>
+    <div class="top-header clearfix">
+        <p style="display: inline; text-transform: capitalize;">{{item.name}}</p>
+        <p style="float: right;"> <a style="color: #fff;" href="{% url 'home-item' item.home_name.id %}">&#8592; Back</a></p>
+    </div>
     <div class="form-container">
         <div class="inner-cont">
             <div class="img-cont">
-                <img class="dash-img" src="/theme/images/tom-crew-7HuTGlUfQSo-unsplash.jpg" alt="alt" height="140px" width="100%">
-                <!--<p>Soup Bowls</p>-->
-               <div class="img-cont-p"><p><b>4 pieces</b></p></div> 
+                <img class="dash-img" src="{{item.item_img.url}}" alt="alt" height="180px" width="100%">
+               <div class="img-cont-p"><p><b><i>{{item.quantity}}</i> piece{{ item.quantity|pluralize:"s" }}</b></p></div> 
             </div>
 
-        <h3 class="text"><b>Can be found in the Accra House</b></h3>
-
-        <div>
-            <input id="button1" type="submit" value="Update this item">
+            <h3 class="text"><b>Can be found in <span style="text-transform:capitalize;">{{item.home_name.name}} ({{item.home_name.city}})</span></b></h3>
+            <div class="clearfix button-container">
+                <div style="display: inline; float: left;">
+                    <a id="button1" href="{% url 'update' item.id %}">Edit</a>
+                </div>
+   
+               <div style="display: inline; float: left;">
+                   <a id="button3" href="{% url 'delete' item.id %}">Delete</a>
+               </div>
+            </div>
+            
         </div>
-
-        <div>
-            <input id="button3" type="submit" value="Delete this item">
-        </div>
-
-</div>
     </div>
 </div>
-</body>
+{% endblock content %}

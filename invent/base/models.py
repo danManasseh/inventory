@@ -15,6 +15,10 @@ class Home(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     house_pic = models.ImageField(null = True)
 
+
+    class Meta:
+        ordering = ['-created']
+
     def __str__(self):
         return self.name
 

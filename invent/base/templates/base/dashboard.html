@@ -16,7 +16,7 @@
     <div class="item-container">
         <div class="clearfix">
             {% for item in items %}
-            <a style="display:block;" href="#" class="img-cont">
+            <a style="display:block;" href="{% url 'details' item.id %}" class="img-cont">
                 <img class="dash-img" src="{{item.item_img.url}}" alt="alt" height="100px" width="100%">
                 <p>{{item.name}}</p>
                 <p>{{item.quantity}} pieces</p>

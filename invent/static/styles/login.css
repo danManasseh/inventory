@@ -65,11 +65,7 @@ input[type = file]{
         padding-left: 20px;
     }
     #button{
-<<<<<<< Updated upstream:invent/static/styles/login.css
-        margin-left: 19%;
-=======
         margin-left: 20%;
->>>>>>> Stashed changes:theme/styles/login.css
         padding: 12px 65px;
         border-style: none;
         background-color: rgba(50, 66, 65, 1);

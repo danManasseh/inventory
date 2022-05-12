@@ -1,0 +1,63 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/item.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+</head>
+<div class="container">
+    <div class="top-header clearfix">
+        {% if not item %}
+        <p style="display: inline; text-transform: capitalize;">Add Home</p>
+        {% else %}
+        <p style="display: inline; text-transform: capitalize;">Update <i>{{home.name}}</i></p>
+        {% endif %}
+
+        <p style="float: right;"> <a style="color: #fff;" href="{% url 'home' %}">&#8592; Back</a></p>
+    </div>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-container">
+            <div class="inner-cont">
+                <div>
+                    <label for="">Name of Home</label>
+                </div>
+                <div>
+                    {{form.name}}
+                </div>
+            </div>
+            <div class="inner-cont">
+                <div>
+                    <label for="">Picture of Home</label>
+                </div>
+                <div> 
+                    {{form.house_pic}}
+                </div>
+            </div>
+            <div style="margin-top: 30px;" class="inner-cont">
+                <div>
+                    <label for="">City</label>
+                </div>
+                <div>
+                    <input type="text" name = "city" list = "city-list" value="{{home.city.name}}" required>
+                    <datalist id = "city-list">
+                        <select name="" id="home_city">
+                            {% for city in cities %}
+                            <option value="{{city.name}}">{{city.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </datalist>
+                </div>
+            </div>
+        </div>
+        <div>
+            {% if not home %}
+            <input id="buttons" type="submit" value="Add Home">
+            {% else %}
+            <input id="buttons" type="submit" value="Update Item">
+            {% endif %}
+        </div>
+    </form>
+</div>
+{% endblock content %}

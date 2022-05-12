@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="{% static 'styles/login.css' %}">
 </head>
     <div class="container">
-        {% include 'menu.html' %}
+        <div class="top-header clearfix">
+            {% if not item %}
+            <p style="display: inline; text-transform: capitalize;">Add Item</p>
+            {% else %}
+            <p style="display: inline; text-transform: capitalize;">Update <i>{{item.name}}</i></p>
+            {% endif %}
+
+            <p style="float: right;"> <a style="color: #fff;" href="{{request.META.HTTP_REFERER}}">&#8592; Back</a></p>
+        </div>
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-container">
@@ -16,7 +24,6 @@
                         <label for="">Name of Item</label>
                     </div>
                     <div>
-                        <!-- <input name="item_name" type="text"> -->
                         {{form.name}}
                     </div>
                 </div>
@@ -25,7 +32,6 @@
                         <label for="">Picture of Item</label>
                     </div>
                     <div> 
-                        <!-- <input id="pict" type="file" name="item_pic" accept="image/*"> -->
                         {{form.item_img}}
                     </div>
                 </div>
@@ -40,7 +46,11 @@
                 </div>
             </div>
             <div>
+                {% if not item %}
                 <input id="buttons" type="submit" value="Add Item">
+                {% else %}
+                <input id="buttons" type="submit" value="Update Item">
+                {% endif %}
             </div>
         </form>
     </div>

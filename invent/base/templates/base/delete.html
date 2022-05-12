@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content %}
+ <head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'styles/item-detail.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/item.css' %}">
+ </head>
+<div class="container">
+  <div class="top-header clearfix">
+      <p style="display: inline; text-transform: capitalize;">{{obj}}</p>
+      <p style="float: right;"> <a style="color: #fff;" href="{{request.META.HTTP_REFERER}}">&#8592; Back</a></p>
+  </div>
+  <div class="delete-container">
+     <p>Are you sure you want to delete this item? {{obj}}</p>
+  </div>
+  <div style="margin-top: 20px;">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <input id="buttons" type="submit" value="Confirm">
+    </form>
+  </div>
+</div>
+{% endblock content %}
