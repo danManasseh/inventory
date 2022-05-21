@@ -12,6 +12,13 @@
         <div class="float-text">
             <h5>{{home.name}} - {{home.city}}</h5>
         </div>
+        <div style="display: inline;" class="dropdown dash-options">
+            <i onclick="myFunction1()" class="fa-regular fa-ellipsis-vertical dropbtns"></i>
+            <div id="dashdrop" class="dashdrop-content">
+                <a href="{% url 'update-home' home.id %}">Update Home</a>
+                <a href="{% url 'delete-home' home.id %}">Delete Home</a>
+            </div>
+        </div>
     </div>
     <div class="item-container">
         <div class="clearfix">
@@ -27,6 +34,11 @@
                 <p>Add an item</p>
             </a>
         </div> 
+    </div>
+    <div style="margin-left: 16px;">
+        <form action="" method="GET">
+            <input name="search-input" value="{{search_input}}" id="search-bar" type="text" placeholder="Search Home...">
+        </form>
     </div>
 </section>
 {% endblock content %}

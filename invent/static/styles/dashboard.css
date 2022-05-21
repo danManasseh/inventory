@@ -60,14 +60,14 @@
     .float-text{
         position: absolute;
         bottom: 10px;
-        left: 20px;
+        left: 10px;
     }
     .float-text h5{
         text-transform: uppercase;
         text-align: center;
         color: #fff;
         font-weight: bolder;
-        font-size: 22px;
+        font-size: 20px;
     }
     .img-cont{
         width: 44%;
@@ -75,4 +75,34 @@
         margin:10px 8px;
         text-decoration: none;
     }
+    .dash-options{
+        position: absolute;
+        bottom: 10px;
+        z-index: 9;
+        right: 10px;
+        color: #fff;
+        font-size: 20px;
+
+    }
+    .dashdrop-content {
+        display: none;
+        position: absolute;
+        right: 10px;
+        background-color: #f9f9f9;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      .dashdrop-content a {
+        float: inherit;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        font-size: 13px;
+      }
+      .shows{
+          display: block;
+      }
 }

@@ -1,5 +1,5 @@
 from django.db import models
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 # Create your models here.
 class City(models.Model):
@@ -11,6 +11,7 @@ class City(models.Model):
 
 class Home(models.Model):
     name = models.CharField(max_length=200)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     city = models.ForeignKey(City, on_delete=models.SET_NULL, null= True)
     created = models.DateTimeField(auto_now_add=True)
     house_pic = models.ImageField(null = True)
