@@ -1,7 +1,8 @@
 <div class="top-header clearfix">
     <p style="display: inline;"><a style="color:#fff;" href="{% url 'home' %}">Inventory</a></p>
     <div style="display: inline;" class="dropdown">
-        <i onclick="myFunction()" class="fa-regular fa-ellipsis-vertical dropbtn"></i>
+        <!-- <i onclick="myFunction()" class="fa-regular fa-ellipsis-vertical dropbtn"></i> -->
+        <span onclick="myFunction()" class="material-symbols-outlined dropbtn">more_vert</span>
         <div id="myDropdown" class="dropdown-content">
             <a href="{% url 'new-home' %}">Add Home</a>
             <a href="">Settings</a>
@@ -9,3 +10,4 @@
         </div>
     </div>
 </div>
+<!-- <span class="material-symbols-outlined">more_vert</span> -->

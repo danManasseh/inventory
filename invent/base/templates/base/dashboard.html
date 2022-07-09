@@ -13,7 +13,7 @@
             <h5>{{home.name}} - {{home.city}}</h5>
         </div>
         <div style="display: inline;" class="dropdown dash-options">
-            <i onclick="myFunction1()" class="fa-regular fa-ellipsis-vertical dropbtns"></i>
+            <span onclick="myFunction1()" class="material-symbols-outlined dropbtn">arrow_drop_down</span>
             <div id="dashdrop" class="dashdrop-content">
                 <a href="{% url 'update-home' home.id %}">Update Home</a>
                 <a href="{% url 'delete-home' home.id %}">Delete Home</a>
